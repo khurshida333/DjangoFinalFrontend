@@ -30,17 +30,16 @@
     <div id="std_reg_container" class="std_reg_container">
         <div id="std_reg_left" class="col-md-8 std_reg_left">
             <h1 class="login-title mt-5">Register As A Teacher</h1>
-            <form id="teacherRegistrationForm" action="" onsubmit="handle_Teacher_Registration(event)" enctype="multipart/form-data" class="">
+            <form id="teacherRegistrationForm" action="http://127.0.0.1:8000/teacher/register/" onsubmit="handle_Teacher_Registration(event)" enctype="multipart/form-data">
                 <p id="error" class="text-danger"></p>
                 <input id="username" type="text" class="input std_reg_field1" placeholder="username" required />
                 <input id="first_name" type="text" class="input std_reg_field2" placeholder="First Name" required />
                 <input id="last_name" type="text" class="input std_reg_field3" placeholder="last Name" required />
-                <input id="email" type="text" class="input std_reg_field4" placeholder="eamil" required />
-                <input id="image" type="file" class="input std_reg_field5" accept="image/*" required />
+                <input id="email" type="email" class="input std_reg_field4" placeholder="eamil" required /> 
                 <input id="bio" type="text" class="input std_reg_field4" placeholder="bio" required />
                 <select id="department" class="input std_reg_field3" required>
                     <option value="">Select a Department</option>
-                    <!-- Department options will be populated here by JavaScript -->
+                    <!-- options -->
                 </select>
                 <input id="password" type="password" class="input std_reg_field2" placeholder="password" required />
                 <input id="confirm_password" type="password" class="input std_reg_field1" placeholder="Confirm password" required />

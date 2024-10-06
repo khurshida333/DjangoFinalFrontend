@@ -16,21 +16,26 @@ const handle_student_logOut = () => {
         window.location.href = "index.html";
       });
   };
-const handle_teacher_logOut = () => {
+  const handle_teacher_logOut = () => {
     const teacher_token = localStorage.getItem("teacher_token");
-  
+
     fetch("http://127.0.0.1:8000/teacher/logout/", {
-      method: "GET",
-      headers: {
-        Authorization: `teacher_token ${teacher_token}`,
-        "Content-Type": "application/json",
-      },
+        method: "GET",
+        headers: {
+            Authorization: `teacher_token ${teacher_token}`,
+            "Content-Type": "application/json",
+        },
     })
-      .then((res) => res.json())
-      .then((data) => {
+    .then((res) => res.json())
+    .then((data) => {
         console.log(data);
         localStorage.removeItem("teacher_token");
         localStorage.removeItem("teacher_id");
+        
+
+        localStorage.setItem("logged_out", "true");
+
+
         window.location.href = "index.html"; 
-      });
-  };
+    });
+};
